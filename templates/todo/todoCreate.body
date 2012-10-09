@@ -1,0 +1,17 @@
+<div>
+__::messages__
+<form method="post" action="/list/__listId__/item/create" class="form" >
+	<div class="control-group">
+		<label class="control-label" for="todoText">Thing to do</label>
+		<div class="controls">
+			<input type="text" id="todoText" placeholder="What do you need to do?" name="todoText">
+		</div>
+	</div>
+	
+	<div class="control-group">
+		<div class="controls">
+			<button type="submit" class="btn btn-primary">Create</button>
+		</div>
+	</div>
+</form>
+</div>

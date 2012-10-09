@@ -1,0 +1,6 @@
+<div class="todo-item action-item" data-id="__id__">
+<span title="remove"><i class="icon-remove"></i></span>
+<span title="edit"><i class="icon-edit"></i></span>
+
+__todoText__ 
+</div>

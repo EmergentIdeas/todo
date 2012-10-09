@@ -1,0 +1,17 @@
+<h1>Edit Todo List</h1>
+__::messages__
+<form method="post" action="/list/__id__/edit" class="form-horizontal">
+	<div class="control-group">
+		<label class="control-label" for="listName">List name</label>
+		<div class="controls">
+			<input type="text" id="listName" placeholder="List name" name="listName">
+		</div>
+	</div>
+	
+	<div id="listItems">
+		__todos::todo/todoEditDisplay__
+	</div>
+	
+	<button type="button" class="btn btn-primary" onclick="return createActionItem('todo-item', __id__)">New Todo Item</button>
+</form>
+
