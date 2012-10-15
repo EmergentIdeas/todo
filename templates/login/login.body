@@ -1,0 +1,37 @@
+<h1>Login</h1>
+__::messages__
+<div class="pull-left login-box well"> 
+	<h4>With an ID from the Web</h4>
+	<a class="btn span1" href="/openIdLogin?endpoint=Google">Google</a>
+	<a class="btn span1" href="/openIdLogin?endpoint=Yahoo">Yahoo</a>
+</div>
+<div class="pull-left login-box well"> 
+	<h4>With an ID Created Here</h4>
+	<form method="post" action="/login" class="form">
+		<input type="hidden" name="forward" />
+		<div class="control-group">
+			<label class="control-label" for="inputUserName">User Name</label>
+			<div class="controls">
+				<input type="text" id="inputUserName" placeholder="Email" name="userName">
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="inputPassword">Password</label>
+			<div class="controls">
+				<input type="password" id="inputPassword" placeholder="Password" name="password">
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<label class="checkbox"> <input type="checkbox">
+					Remember me
+				</label>
+			</div>
+		</div>
+		<div class="control-group">
+			<div class="controls">
+				<button type="submit" class="btn btn-primary">Sign in</button> <a href="/signUp" class="pull-right" style="line-height: 30px;">Sign up</a>
+			</div>
+		</div>
+	</form>
+</div>

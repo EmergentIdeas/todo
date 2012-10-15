@@ -1,17 +1,15 @@
 <div class="navbar">
 	<div class="navbar-inner">
+		<div class="container">
 		    <a class="brand" href="/index.html">Webhandle Todo</a>
 		    <ul class="nav">
 		      <li><a href="/index.html">Home</a></li>
-		      <li><a href="/lists">My Lists</a></li>
-		      <li><a href="/logout">Sign Out</a></li>
+		      <li class="pull-right"><a href="/login">Sign In</a></li>
 		    </ul>
+	    </div>
     </div>
 </div>
 <div class="container content">
-<div class="pull-right welcome">
-	Welcome <strong>__currentUserObject.fullName__</strong>
-</div>
 __::$contentArea__
 </div>
 __::jqUIBootstrap__

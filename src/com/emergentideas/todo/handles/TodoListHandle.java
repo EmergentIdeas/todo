@@ -23,7 +23,7 @@ public class TodoListHandle {
 	
 	protected TodoService todoService;
 	
-	@Handle("/lists")
+	@Handle({"/lists", "/menu"})
 	@Template
 	@Wrap("app_page")
 	public Object lists(User user, Location location) {

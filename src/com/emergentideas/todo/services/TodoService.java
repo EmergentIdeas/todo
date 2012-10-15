@@ -8,11 +8,14 @@ import com.emergentideas.todo.data.Todo;
 import com.emergentideas.todo.data.TodoList;
 import com.emergentideas.webhandle.Type;
 import com.emergentideas.webhandle.Wire;
+import com.emergentideas.webhandle.assumptions.oak.interfaces.AuthenticationService;
+import com.emergentideas.webhandle.assumptions.oak.interfaces.User;
 
 @Type("com.emergentideas.todo.services.TodoService")
 public class TodoService {
 
 	protected EntityManager entityManager;
+	protected AuthenticationService authenticationService;
 	
 	public List<TodoList> getLists(String owningProfile) {
 		return entityManager.createQuery("select tdl from TodoList tdl where owningProfile = ?1").setParameter(1, owningProfile).getResultList();
@@ -48,6 +51,14 @@ public class TodoService {
 	public void dontSave(Object o) {
 		entityManager.detach(o);
 	}
+	
+	public User createNewUser(String email, String fullName, String password, String authSystem) {
+		User user = authenticationService.createUser(email, email, password);
+		authenticationService.setFullName(email, fullName);
+		authenticationService.setAuthenticationSystem(email, authSystem);
+		authenticationService.addMember("users", email);
+		return user;
+	}
 
 	public EntityManager getEntityManager() {
 		return entityManager;
@@ -56,6 +67,15 @@ public class TodoService {
 	@Wire
 	public void setEntityManager(EntityManager entityManager) {
 		this.entityManager = entityManager;
+	}
+
+	public AuthenticationService getAuthenticationService() {
+		return authenticationService;
+	}
+
+	@Wire
+	public void setAuthenticationService(AuthenticationService authenticationService) {
+		this.authenticationService = authenticationService;
 	}
 	
 	
