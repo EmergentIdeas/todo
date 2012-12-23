@@ -1,0 +1,12 @@
+<ivy-module version="2.0">
+    <info organisation="com.emergentideas" module="todo"/>
+    <configurations defaultconf="build" defaultconfmapping="build->*;deployment->*;test->default">
+    	<conf name="build" />
+    	<conf name="deployment" />
+    	<conf name="test" />
+    </configurations>
+    <dependencies>
+    	<dependency org="com.emergentideas" name="webhandle" rev="1.0.0.5" conf="build" />	
+    	<dependency org="com.emergentideas" name="oak_login" rev="1.0.0.2" conf="deployment" transitive="false" />	
+    </dependencies>
+</ivy-module>
