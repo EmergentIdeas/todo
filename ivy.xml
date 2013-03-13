@@ -4,9 +4,10 @@
     	<conf name="build" />
     	<conf name="deployment" />
     	<conf name="test" />
+    	<conf name="appdep" />
     </configurations>
     <dependencies>
     	<dependency org="com.emergentideas" name="webhandle" rev="1.0.0.5" conf="build" />	
-    	<dependency org="com.emergentideas" name="oak_login" rev="1.0.0.2" conf="deployment" transitive="false" />	
+    	<dependency org="com.emergentideas" name="oak_login" rev="1.0.0.4" conf="appdep" />	
     </dependencies>
 </ivy-module>

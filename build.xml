@@ -27,10 +27,12 @@
 		
 		<ivy:cachepath pathid="ivy.cachepath.dep" conf="deployment"/>
 		<ivy:cachepath pathid="ivy.cachepath.build" conf="build"/>
+		<ivy:cachepath pathid="ivy.cachepath.appdep" conf="appdep"/>
 
 		<path id="ivy.deps">
 			<path refid="ivy.cachepath.dep" />
 			<path refid="ivy.cachepath.build" />
+			<path refid="ivy.cachepath.appdep" />
 			<fileset dir="lib" >
 				<include name="*.jar"/>
 			</fileset>
@@ -49,7 +51,7 @@
 	</target>
 	
 	<target name="prep" depends="compile" >
-	  	<ivy:retrieve pattern="${ivylibs}/[artifact](-[classifier]).jar" type="jar" conf="deployment"/>
+	  	<ivy:retrieve pattern="${ivylibs}/[artifact](-[revision]).jar" type="jar" conf="appdep"/>
 	</target>
 
 
@@ -57,5 +59,6 @@
 	<target name="clean" description="clean up" >
 		<delete dir="${build}/com"/>
 		<delete dir="${dist}"/>
+		<delete dir="${ivylibs}"/>
 	</target>
 </project>
